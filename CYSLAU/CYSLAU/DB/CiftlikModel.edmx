@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ASI_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ASI_ADI" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DOGUM_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DOGUMTURU_ACIKLAMA" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HAYVAN">
+          <Key>
+            <PropertyRef Name="KAYITNO" />
+          </Key>
+          <Property Name="KAYITNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KAYIT_TARIHI" Type="datetime" Nullable="false" />
+          <Property Name="DEVLET_NO" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="BOYUN_NO" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="KULAK_NO" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CINSIYETI" Type="int" />
+          <Property Name="ANNE_KAYITNO" Type="int" />
+          <Property Name="BABA_KAYITNO" Type="int" />
+          <Property Name="HAYVANCINSI_SIRANO" Type="int" Nullable="false" />
+          <Property Name="HAYVANKAYITTURU_SIRANO" Type="int" />
+          <Property Name="DOGUM_TARIHI" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="HAYVAN_CINSI">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CINS_ADI" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HAYVAN_DOGUM_TURU">
+          <Key>
+            <PropertyRef Name="HAYVAN_KAYITNO" />
+            <PropertyRef Name="DOGUMTURU_SIRANO" />
+          </Key>
+          <Property Name="HAYVAN_KAYITNO" Type="int" Nullable="false" />
+          <Property Name="DOGUMTURU_SIRANO" Type="int" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="40" />
+          <Property Name="VETERINER_SIRANO" Type="int" />
+        </EntityType>
+        <EntityType Name="HAYVAN_KAYIT_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KAYIT_TURU_ADU" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HAYVAN_YEM_KARISIM_YEM_TURU">
+          <Key>
+            <PropertyRef Name="KAYITNO" />
+          </Key>
+          <Property Name="KAYITNO" Type="int" Nullable="false" />
+          <Property Name="HAYVAN_KAYITNO" Type="int" Nullable="false" />
+          <Property Name="KARISIM_SIRANO" Type="int" Nullable="false" />
+          <Property Name="YEM_SAATI" Type="datetime" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ILAC_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ILAC_ADI" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="KULLANIM_TURU" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="SAGLIK">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" Nullable="false" />
+          <Property Name="HAYVAN_KAYITNO" Type="int" Nullable="false" />
+          <Property Name="VETERINER_SIRANO" Type="int" Nullable="false" />
+          <Property Name="ISLEM_TARIHI" Type="datetime" Nullable="false" />
+          <Property Name="ISLEM_ACIKLAMA" Type="nvarchar" MaxLength="255" />
+          <Property Name="NOTLAR" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="SAGLIK_ASI_TURU">
+          <Key>
+            <PropertyRef Name="SAGLIK_SIRANO" />
+            <PropertyRef Name="ASITURU_SIRANO" />
+          </Key>
+          <Property Name="SAGLIK_SIRANO" Type="int" Nullable="false" />
+          <Property Name="ASITURU_SIRANO" Type="int" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SAGLIK_ILAC">
+          <Key>
+            <PropertyRef Name="SAGLIK_IRANO" />
+            <PropertyRef Name="ILACTURU_SIRANO" />
+          </Key>
+          <Property Name="SAGLIK_IRANO" Type="int" Nullable="false" />
+          <Property Name="ILACTURU_SIRANO" Type="int" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SUT">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HAYVAN_KAYITNO" Type="int" />
+          <Property Name="SAGIM_TARIHI" Type="datetime" Nullable="false" />
+          <Property Name="ALINAN_SUT" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="VETERINER">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VETERINER_ADI" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ADRES" Type="nvarchar" MaxLength="100" />
+          <Property Name="TELEFON1" Type="nvarchar" MaxLength="20" />
+          <Property Name="TELEFON2" Type="nvarchar" MaxLength="20" />
+          <Property Name="EPOSTA" Type="nvarchar" MaxLength="200" />
+          <Property Name="NOTLAR" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="YEM_KARISIM">
+          <Key>
+            <PropertyRef Name="KARISIM_SIRANO" />
+          </Key>
+          <Property Name="KARISIM_SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YEM_KARISIM_YEM_TURU">
+          <Key>
+            <PropertyRef Name="KARISIM_SIRANO" />
+            <PropertyRef Name="YEMTURU_SIRANO" />
+          </Key>
+          <Property Name="KARISIM_SIRANO" Type="int" Nullable="false" />
+          <Property Name="YEMTURU_SIRANO" Type="int" Nullable="false" />
+          <Property Name="ORAN" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YEM_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YEM_TURU_ACIKLAMA" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <Association Name="ASI_TURU_SAGLIK_ASI_TURU">
+          <End Role="ASI_TURU" Type="Self.ASI_TURU" Multiplicity="1" />
+          <End Role="SAGLIK_ASI_TURU" Type="Self.SAGLIK_ASI_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASI_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ASI_TURU">
+              <PropertyRef Name="ASITURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DOGUM_TURU_HAYVAN_DOGUM_TURU">
+          <End Role="DOGUM_TURU" Type="Self.DOGUM_TURU" Multiplicity="1" />
+          <End Role="HAYVAN_DOGUM_TURU" Type="Self.HAYVAN_DOGUM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOGUM_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN_DOGUM_TURU">
+              <PropertyRef Name="DOGUMTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM">
+          <End Role="YEM_KARISIM" Type="Self.YEM_KARISIM" Multiplicity="1" />
+          <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" Type="Self.HAYVAN_YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YEM_KARISIM">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN_YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_CINSI_HAYVAN">
+          <End Role="HAYVAN_CINSI" Type="Self.HAYVAN_CINSI" Multiplicity="1" />
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN_CINSI">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN">
+              <PropertyRef Name="HAYVANCINSI_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_HAYVAN_DOGUM_TURU">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="1" />
+          <End Role="HAYVAN_DOGUM_TURU" Type="Self.HAYVAN_DOGUM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="HAYVAN_DOGUM_TURU">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="1" />
+          <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" Type="Self.HAYVAN_YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="HAYVAN_YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_KAYIT_TURU_HAYVAN">
+          <End Role="HAYVAN_KAYIT_TURU" Type="Self.HAYVAN_KAYIT_TURU" Multiplicity="0..1" />
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN_KAYIT_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN">
+              <PropertyRef Name="HAYVANKAYITTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_SAGLIK">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="1" />
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="SAGLIK">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_SUT">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="0..1" />
+          <End Role="SUT" Type="Self.SUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="SUT">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ILAC_TURU_SAGLIK_ILAC">
+          <End Role="ILAC_TURU" Type="Self.ILAC_TURU" Multiplicity="1" />
+          <End Role="SAGLIK_ILAC" Type="Self.SAGLIK_ILAC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ILAC_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ILAC">
+              <PropertyRef Name="ILACTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAGLIK_SAGLIK_ASI_TURU">
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="1" />
+          <End Role="SAGLIK_ASI_TURU" Type="Self.SAGLIK_ASI_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAGLIK">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ASI_TURU">
+              <PropertyRef Name="SAGLIK_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAGLIK_SAGLIK_ILAC">
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="1" />
+          <End Role="SAGLIK_ILAC" Type="Self.SAGLIK_ILAC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAGLIK">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ILAC">
+              <PropertyRef Name="SAGLIK_IRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VETERINER_HAYVAN_DOGUM_TURU">
+          <End Role="VETERINER" Type="Self.VETERINER" Multiplicity="0..1" />
+          <End Role="HAYVAN_DOGUM_TURU" Type="Self.HAYVAN_DOGUM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VETERINER">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN_DOGUM_TURU">
+              <PropertyRef Name="VETERINER_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VETERINER_SAGLIK">
+          <End Role="VETERINER" Type="Self.VETERINER" Multiplicity="1" />
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VETERINER">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK">
+              <PropertyRef Name="VETERINER_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YEM_KARISIM_YEM_KARISIM_YEM_TURU">
+          <End Role="YEM_KARISIM" Type="Self.YEM_KARISIM" Multiplicity="1" />
+          <End Role="YEM_KARISIM_YEM_TURU" Type="Self.YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YEM_KARISIM">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Principal>
+            <Dependent Role="YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YEM_TURU_YEM_KARISIM_YEM_TURU">
+          <End Role="YEM_TURU" Type="Self.YEM_TURU" Multiplicity="1" />
+          <End Role="YEM_KARISIM_YEM_TURU" Type="Self.YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YEM_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="YEMTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CYSModelStoreContainer">
+          <EntitySet Name="ASI_TURU" EntityType="Self.ASI_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOGUM_TURU" EntityType="Self.DOGUM_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HAYVAN" EntityType="Self.HAYVAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HAYVAN_CINSI" EntityType="Self.HAYVAN_CINSI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HAYVAN_DOGUM_TURU" EntityType="Self.HAYVAN_DOGUM_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HAYVAN_KAYIT_TURU" EntityType="Self.HAYVAN_KAYIT_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HAYVAN_YEM_KARISIM_YEM_TURU" EntityType="Self.HAYVAN_YEM_KARISIM_YEM_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ILAC_TURU" EntityType="Self.ILAC_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAGLIK" EntityType="Self.SAGLIK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAGLIK_ASI_TURU" EntityType="Self.SAGLIK_ASI_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAGLIK_ILAC" EntityType="Self.SAGLIK_ILAC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUT" EntityType="Self.SUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VETERINER" EntityType="Self.VETERINER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YEM_KARISIM" EntityType="Self.YEM_KARISIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YEM_KARISIM_YEM_TURU" EntityType="Self.YEM_KARISIM_YEM_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YEM_TURU" EntityType="Self.YEM_TURU" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="ASI_TURU_SAGLIK_ASI_TURU" Association="Self.ASI_TURU_SAGLIK_ASI_TURU">
+            <End Role="ASI_TURU" EntitySet="ASI_TURU" />
+            <End Role="SAGLIK_ASI_TURU" EntitySet="SAGLIK_ASI_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="DOGUM_TURU_HAYVAN_DOGUM_TURU" Association="Self.DOGUM_TURU_HAYVAN_DOGUM_TURU">
+            <End Role="DOGUM_TURU" EntitySet="DOGUM_TURU" />
+            <End Role="HAYVAN_DOGUM_TURU" EntitySet="HAYVAN_DOGUM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM" Association="Self.FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM">
+            <End Role="YEM_KARISIM" EntitySet="YEM_KARISIM" />
+            <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" EntitySet="HAYVAN_YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_CINSI_HAYVAN" Association="Self.HAYVAN_CINSI_HAYVAN">
+            <End Role="HAYVAN_CINSI" EntitySet="HAYVAN_CINSI" />
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_HAYVAN_DOGUM_TURU" Association="Self.HAYVAN_HAYVAN_DOGUM_TURU">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="HAYVAN_DOGUM_TURU" EntitySet="HAYVAN_DOGUM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU" Association="Self.HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" EntitySet="HAYVAN_YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_KAYIT_TURU_HAYVAN" Association="Self.HAYVAN_KAYIT_TURU_HAYVAN">
+            <End Role="HAYVAN_KAYIT_TURU" EntitySet="HAYVAN_KAYIT_TURU" />
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_SAGLIK" Association="Self.HAYVAN_SAGLIK">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_SUT" Association="Self.HAYVAN_SUT">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="SUT" EntitySet="SUT" />
+          </AssociationSet>
+          <AssociationSet Name="ILAC_TURU_SAGLIK_ILAC" Association="Self.ILAC_TURU_SAGLIK_ILAC">
+            <End Role="ILAC_TURU" EntitySet="ILAC_TURU" />
+            <End Role="SAGLIK_ILAC" EntitySet="SAGLIK_ILAC" />
+          </AssociationSet>
+          <AssociationSet Name="SAGLIK_SAGLIK_ASI_TURU" Association="Self.SAGLIK_SAGLIK_ASI_TURU">
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+            <End Role="SAGLIK_ASI_TURU" EntitySet="SAGLIK_ASI_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="SAGLIK_SAGLIK_ILAC" Association="Self.SAGLIK_SAGLIK_ILAC">
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+            <End Role="SAGLIK_ILAC" EntitySet="SAGLIK_ILAC" />
+          </AssociationSet>
+          <AssociationSet Name="VETERINER_HAYVAN_DOGUM_TURU" Association="Self.VETERINER_HAYVAN_DOGUM_TURU">
+            <End Role="VETERINER" EntitySet="VETERINER" />
+            <End Role="HAYVAN_DOGUM_TURU" EntitySet="HAYVAN_DOGUM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="VETERINER_SAGLIK" Association="Self.VETERINER_SAGLIK">
+            <End Role="VETERINER" EntitySet="VETERINER" />
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+          </AssociationSet>
+          <AssociationSet Name="YEM_KARISIM_YEM_KARISIM_YEM_TURU" Association="Self.YEM_KARISIM_YEM_KARISIM_YEM_TURU">
+            <End Role="YEM_KARISIM" EntitySet="YEM_KARISIM" />
+            <End Role="YEM_KARISIM_YEM_TURU" EntitySet="YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="YEM_TURU_YEM_KARISIM_YEM_TURU" Association="Self.YEM_TURU_YEM_KARISIM_YEM_TURU">
+            <End Role="YEM_TURU" EntitySet="YEM_TURU" />
+            <End Role="YEM_KARISIM_YEM_TURU" EntitySet="YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ASI_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ASI_ADI" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SAGLIK_ASI_TURU" Relationship="Self.ASI_TURU_SAGLIK_ASI_TURU" FromRole="ASI_TURU" ToRole="SAGLIK_ASI_TURU" />
+        </EntityType>
+        <EntityType Name="DOGUM_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DOGUMTURU_ACIKLAMA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HAYVAN_DOGUM_TURU" Relationship="Self.DOGUM_TURU_HAYVAN_DOGUM_TURU" FromRole="DOGUM_TURU" ToRole="HAYVAN_DOGUM_TURU" />
+        </EntityType>
+        <EntityType Name="HAYVAN">
+          <Key>
+            <PropertyRef Name="KAYITNO" />
+          </Key>
+          <Property Name="KAYITNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KAYIT_TARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DEVLET_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BOYUN_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KULAK_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CINSIYETI" Type="Int32" />
+          <Property Name="ANNE_KAYITNO" Type="Int32" />
+          <Property Name="BABA_KAYITNO" Type="Int32" />
+          <Property Name="HAYVANCINSI_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="HAYVANKAYITTURU_SIRANO" Type="Int32" />
+          <Property Name="DOGUM_TARIHI" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="HAYVAN_CINSI" Relationship="Self.HAYVAN_CINSI_HAYVAN" FromRole="HAYVAN" ToRole="HAYVAN_CINSI" />
+          <NavigationProperty Name="HAYVAN_DOGUM_TURU" Relationship="Self.HAYVAN_HAYVAN_DOGUM_TURU" FromRole="HAYVAN" ToRole="HAYVAN_DOGUM_TURU" />
+          <NavigationProperty Name="HAYVAN_YEM_KARISIM_YEM_TURU" Relationship="Self.HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU" FromRole="HAYVAN" ToRole="HAYVAN_YEM_KARISIM_YEM_TURU" />
+          <NavigationProperty Name="HAYVAN_KAYIT_TURU" Relationship="Self.HAYVAN_KAYIT_TURU_HAYVAN" FromRole="HAYVAN" ToRole="HAYVAN_KAYIT_TURU" />
+          <NavigationProperty Name="SAGLIK" Relationship="Self.HAYVAN_SAGLIK" FromRole="HAYVAN" ToRole="SAGLIK" />
+          <NavigationProperty Name="SUT" Relationship="Self.HAYVAN_SUT" FromRole="HAYVAN" ToRole="SUT" />
+        </EntityType>
+        <EntityType Name="HAYVAN_CINSI">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CINS_ADI" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HAYVAN" Relationship="Self.HAYVAN_CINSI_HAYVAN" FromRole="HAYVAN_CINSI" ToRole="HAYVAN" />
+        </EntityType>
+        <EntityType Name="HAYVAN_DOGUM_TURU">
+          <Key>
+            <PropertyRef Name="HAYVAN_KAYITNO" />
+            <PropertyRef Name="DOGUMTURU_SIRANO" />
+          </Key>
+          <Property Name="HAYVAN_KAYITNO" Type="Int32" Nullable="false" />
+          <Property Name="DOGUMTURU_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="VETERINER_SIRANO" Type="Int32" />
+          <NavigationProperty Name="DOGUM_TURU" Relationship="Self.DOGUM_TURU_HAYVAN_DOGUM_TURU" FromRole="HAYVAN_DOGUM_TURU" ToRole="DOGUM_TURU" />
+          <NavigationProperty Name="HAYVAN" Relationship="Self.HAYVAN_HAYVAN_DOGUM_TURU" FromRole="HAYVAN_DOGUM_TURU" ToRole="HAYVAN" />
+          <NavigationProperty Name="VETERINER" Relationship="Self.VETERINER_HAYVAN_DOGUM_TURU" FromRole="HAYVAN_DOGUM_TURU" ToRole="VETERINER" />
+        </EntityType>
+        <EntityType Name="HAYVAN_KAYIT_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KAYIT_TURU_ADU" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HAYVAN" Relationship="Self.HAYVAN_KAYIT_TURU_HAYVAN" FromRole="HAYVAN_KAYIT_TURU" ToRole="HAYVAN" />
+        </EntityType>
+        <EntityType Name="HAYVAN_YEM_KARISIM_YEM_TURU">
+          <Key>
+            <PropertyRef Name="KAYITNO" />
+          </Key>
+          <Property Name="KAYITNO" Type="Int32" Nullable="false" />
+          <Property Name="HAYVAN_KAYITNO" Type="Int32" Nullable="false" />
+          <Property Name="KARISIM_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="YEM_SAATI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HAYVAN" Relationship="Self.HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU" FromRole="HAYVAN_YEM_KARISIM_YEM_TURU" ToRole="HAYVAN" />
+          <NavigationProperty Name="YEM_KARISIM" Relationship="Self.FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM" FromRole="HAYVAN_YEM_KARISIM_YEM_TURU" ToRole="YEM_KARISIM" />
+        </EntityType>
+        <EntityType Name="ILAC_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ILAC_ADI" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KULLANIM_TURU" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SAGLIK_ILAC" Relationship="Self.ILAC_TURU_SAGLIK_ILAC" FromRole="ILAC_TURU" ToRole="SAGLIK_ILAC" />
+        </EntityType>
+        <EntityType Name="SAGLIK">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="HAYVAN_KAYITNO" Type="Int32" Nullable="false" />
+          <Property Name="VETERINER_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="ISLEM_TARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ISLEM_ACIKLAMA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NOTLAR" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HAYVAN" Relationship="Self.HAYVAN_SAGLIK" FromRole="SAGLIK" ToRole="HAYVAN" />
+          <NavigationProperty Name="SAGLIK_ASI_TURU" Relationship="Self.SAGLIK_SAGLIK_ASI_TURU" FromRole="SAGLIK" ToRole="SAGLIK_ASI_TURU" />
+          <NavigationProperty Name="SAGLIK_ILAC" Relationship="Self.SAGLIK_SAGLIK_ILAC" FromRole="SAGLIK" ToRole="SAGLIK_ILAC" />
+          <NavigationProperty Name="VETERINER" Relationship="Self.VETERINER_SAGLIK" FromRole="SAGLIK" ToRole="VETERINER" />
+        </EntityType>
+        <EntityType Name="SAGLIK_ASI_TURU">
+          <Key>
+            <PropertyRef Name="SAGLIK_SIRANO" />
+            <PropertyRef Name="ASITURU_SIRANO" />
+          </Key>
+          <Property Name="SAGLIK_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="ASITURU_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ASI_TURU" Relationship="Self.ASI_TURU_SAGLIK_ASI_TURU" FromRole="SAGLIK_ASI_TURU" ToRole="ASI_TURU" />
+          <NavigationProperty Name="SAGLIK" Relationship="Self.SAGLIK_SAGLIK_ASI_TURU" FromRole="SAGLIK_ASI_TURU" ToRole="SAGLIK" />
+        </EntityType>
+        <EntityType Name="SAGLIK_ILAC">
+          <Key>
+            <PropertyRef Name="SAGLIK_IRANO" />
+            <PropertyRef Name="ILACTURU_SIRANO" />
+          </Key>
+          <Property Name="SAGLIK_IRANO" Type="Int32" Nullable="false" />
+          <Property Name="ILACTURU_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ILAC_TURU" Relationship="Self.ILAC_TURU_SAGLIK_ILAC" FromRole="SAGLIK_ILAC" ToRole="ILAC_TURU" />
+          <NavigationProperty Name="SAGLIK" Relationship="Self.SAGLIK_SAGLIK_ILAC" FromRole="SAGLIK_ILAC" ToRole="SAGLIK" />
+        </EntityType>
+        <EntityType Name="SUT">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HAYVAN_KAYITNO" Type="Int32" />
+          <Property Name="SAGIM_TARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ALINAN_SUT" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="HAYVAN" Relationship="Self.HAYVAN_SUT" FromRole="SUT" ToRole="HAYVAN" />
+        </EntityType>
+        <EntityType Name="VETERINER">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VETERINER_ADI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFON1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFON2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EPOSTA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NOTLAR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HAYVAN_DOGUM_TURU" Relationship="Self.VETERINER_HAYVAN_DOGUM_TURU" FromRole="VETERINER" ToRole="HAYVAN_DOGUM_TURU" />
+          <NavigationProperty Name="SAGLIK" Relationship="Self.VETERINER_SAGLIK" FromRole="VETERINER" ToRole="SAGLIK" />
+        </EntityType>
+        <EntityType Name="YEM_KARISIM">
+          <Key>
+            <PropertyRef Name="KARISIM_SIRANO" />
+          </Key>
+          <Property Name="KARISIM_SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HAYVAN_YEM_KARISIM_YEM_TURU" Relationship="Self.FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM" FromRole="YEM_KARISIM" ToRole="HAYVAN_YEM_KARISIM_YEM_TURU" />
+          <NavigationProperty Name="YEM_KARISIM_YEM_TURU" Relationship="Self.YEM_KARISIM_YEM_KARISIM_YEM_TURU" FromRole="YEM_KARISIM" ToRole="YEM_KARISIM_YEM_TURU" />
+        </EntityType>
+        <EntityType Name="YEM_KARISIM_YEM_TURU">
+          <Key>
+            <PropertyRef Name="KARISIM_SIRANO" />
+            <PropertyRef Name="YEMTURU_SIRANO" />
+          </Key>
+          <Property Name="KARISIM_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="YEMTURU_SIRANO" Type="Int32" Nullable="false" />
+          <Property Name="ORAN" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="YEM_KARISIM" Relationship="Self.YEM_KARISIM_YEM_KARISIM_YEM_TURU" FromRole="YEM_KARISIM_YEM_TURU" ToRole="YEM_KARISIM" />
+          <NavigationProperty Name="YEM_TURU" Relationship="Self.YEM_TURU_YEM_KARISIM_YEM_TURU" FromRole="YEM_KARISIM_YEM_TURU" ToRole="YEM_TURU" />
+        </EntityType>
+        <EntityType Name="YEM_TURU">
+          <Key>
+            <PropertyRef Name="SIRANO" />
+          </Key>
+          <Property Name="SIRANO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YEM_TURU_ACIKLAMA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="YEM_KARISIM_YEM_TURU" Relationship="Self.YEM_TURU_YEM_KARISIM_YEM_TURU" FromRole="YEM_TURU" ToRole="YEM_KARISIM_YEM_TURU" />
+        </EntityType>
+        <Association Name="ASI_TURU_SAGLIK_ASI_TURU">
+          <End Role="ASI_TURU" Type="Self.ASI_TURU" Multiplicity="1" />
+          <End Role="SAGLIK_ASI_TURU" Type="Self.SAGLIK_ASI_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ASI_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ASI_TURU">
+              <PropertyRef Name="ASITURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DOGUM_TURU_HAYVAN_DOGUM_TURU">
+          <End Role="DOGUM_TURU" Type="Self.DOGUM_TURU" Multiplicity="1" />
+          <End Role="HAYVAN_DOGUM_TURU" Type="Self.HAYVAN_DOGUM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOGUM_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN_DOGUM_TURU">
+              <PropertyRef Name="DOGUMTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_CINSI_HAYVAN">
+          <End Role="HAYVAN_CINSI" Type="Self.HAYVAN_CINSI" Multiplicity="1" />
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN_CINSI">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN">
+              <PropertyRef Name="HAYVANCINSI_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_HAYVAN_DOGUM_TURU">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="1" />
+          <End Role="HAYVAN_DOGUM_TURU" Type="Self.HAYVAN_DOGUM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="HAYVAN_DOGUM_TURU">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="1" />
+          <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" Type="Self.HAYVAN_YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="HAYVAN_YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_KAYIT_TURU_HAYVAN">
+          <End Role="HAYVAN_KAYIT_TURU" Type="Self.HAYVAN_KAYIT_TURU" Multiplicity="0..1" />
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN_KAYIT_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN">
+              <PropertyRef Name="HAYVANKAYITTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_SAGLIK">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="1" />
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="SAGLIK">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HAYVAN_SUT">
+          <End Role="HAYVAN" Type="Self.HAYVAN" Multiplicity="0..1" />
+          <End Role="SUT" Type="Self.SUT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HAYVAN">
+              <PropertyRef Name="KAYITNO" />
+            </Principal>
+            <Dependent Role="SUT">
+              <PropertyRef Name="HAYVAN_KAYITNO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VETERINER_HAYVAN_DOGUM_TURU">
+          <End Role="VETERINER" Type="Self.VETERINER" Multiplicity="0..1" />
+          <End Role="HAYVAN_DOGUM_TURU" Type="Self.HAYVAN_DOGUM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VETERINER">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN_DOGUM_TURU">
+              <PropertyRef Name="VETERINER_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM">
+          <End Role="YEM_KARISIM" Type="Self.YEM_KARISIM" Multiplicity="1" />
+          <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" Type="Self.HAYVAN_YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YEM_KARISIM">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Principal>
+            <Dependent Role="HAYVAN_YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ILAC_TURU_SAGLIK_ILAC">
+          <End Role="ILAC_TURU" Type="Self.ILAC_TURU" Multiplicity="1" />
+          <End Role="SAGLIK_ILAC" Type="Self.SAGLIK_ILAC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ILAC_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ILAC">
+              <PropertyRef Name="ILACTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAGLIK_SAGLIK_ASI_TURU">
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="1" />
+          <End Role="SAGLIK_ASI_TURU" Type="Self.SAGLIK_ASI_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAGLIK">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ASI_TURU">
+              <PropertyRef Name="SAGLIK_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SAGLIK_SAGLIK_ILAC">
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="1" />
+          <End Role="SAGLIK_ILAC" Type="Self.SAGLIK_ILAC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAGLIK">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK_ILAC">
+              <PropertyRef Name="SAGLIK_IRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VETERINER_SAGLIK">
+          <End Role="VETERINER" Type="Self.VETERINER" Multiplicity="1" />
+          <End Role="SAGLIK" Type="Self.SAGLIK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VETERINER">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="SAGLIK">
+              <PropertyRef Name="VETERINER_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YEM_KARISIM_YEM_KARISIM_YEM_TURU">
+          <End Role="YEM_KARISIM" Type="Self.YEM_KARISIM" Multiplicity="1" />
+          <End Role="YEM_KARISIM_YEM_TURU" Type="Self.YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YEM_KARISIM">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Principal>
+            <Dependent Role="YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="KARISIM_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="YEM_TURU_YEM_KARISIM_YEM_TURU">
+          <End Role="YEM_TURU" Type="Self.YEM_TURU" Multiplicity="1" />
+          <End Role="YEM_KARISIM_YEM_TURU" Type="Self.YEM_KARISIM_YEM_TURU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YEM_TURU">
+              <PropertyRef Name="SIRANO" />
+            </Principal>
+            <Dependent Role="YEM_KARISIM_YEM_TURU">
+              <PropertyRef Name="YEMTURU_SIRANO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CYSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ASI_TURU" EntityType="Self.ASI_TURU" />
+          <EntitySet Name="DOGUM_TURU" EntityType="Self.DOGUM_TURU" />
+          <EntitySet Name="HAYVAN" EntityType="Self.HAYVAN" />
+          <EntitySet Name="HAYVAN_CINSI" EntityType="Self.HAYVAN_CINSI" />
+          <EntitySet Name="HAYVAN_DOGUM_TURU" EntityType="Self.HAYVAN_DOGUM_TURU" />
+          <EntitySet Name="HAYVAN_KAYIT_TURU" EntityType="Self.HAYVAN_KAYIT_TURU" />
+          <EntitySet Name="HAYVAN_YEM_KARISIM_YEM_TURU" EntityType="Self.HAYVAN_YEM_KARISIM_YEM_TURU" />
+          <EntitySet Name="ILAC_TURU" EntityType="Self.ILAC_TURU" />
+          <EntitySet Name="SAGLIK" EntityType="Self.SAGLIK" />
+          <EntitySet Name="SAGLIK_ASI_TURU" EntityType="Self.SAGLIK_ASI_TURU" />
+          <EntitySet Name="SAGLIK_ILAC" EntityType="Self.SAGLIK_ILAC" />
+          <EntitySet Name="SUT" EntityType="Self.SUT" />
+          <EntitySet Name="VETERINER" EntityType="Self.VETERINER" />
+          <EntitySet Name="YEM_KARISIM" EntityType="Self.YEM_KARISIM" />
+          <EntitySet Name="YEM_KARISIM_YEM_TURU" EntityType="Self.YEM_KARISIM_YEM_TURU" />
+          <EntitySet Name="YEM_TURU" EntityType="Self.YEM_TURU" />
+          <AssociationSet Name="ASI_TURU_SAGLIK_ASI_TURU" Association="Self.ASI_TURU_SAGLIK_ASI_TURU">
+            <End Role="ASI_TURU" EntitySet="ASI_TURU" />
+            <End Role="SAGLIK_ASI_TURU" EntitySet="SAGLIK_ASI_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="DOGUM_TURU_HAYVAN_DOGUM_TURU" Association="Self.DOGUM_TURU_HAYVAN_DOGUM_TURU">
+            <End Role="DOGUM_TURU" EntitySet="DOGUM_TURU" />
+            <End Role="HAYVAN_DOGUM_TURU" EntitySet="HAYVAN_DOGUM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_CINSI_HAYVAN" Association="Self.HAYVAN_CINSI_HAYVAN">
+            <End Role="HAYVAN_CINSI" EntitySet="HAYVAN_CINSI" />
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_HAYVAN_DOGUM_TURU" Association="Self.HAYVAN_HAYVAN_DOGUM_TURU">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="HAYVAN_DOGUM_TURU" EntitySet="HAYVAN_DOGUM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU" Association="Self.HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" EntitySet="HAYVAN_YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_KAYIT_TURU_HAYVAN" Association="Self.HAYVAN_KAYIT_TURU_HAYVAN">
+            <End Role="HAYVAN_KAYIT_TURU" EntitySet="HAYVAN_KAYIT_TURU" />
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_SAGLIK" Association="Self.HAYVAN_SAGLIK">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+          </AssociationSet>
+          <AssociationSet Name="HAYVAN_SUT" Association="Self.HAYVAN_SUT">
+            <End Role="HAYVAN" EntitySet="HAYVAN" />
+            <End Role="SUT" EntitySet="SUT" />
+          </AssociationSet>
+          <AssociationSet Name="VETERINER_HAYVAN_DOGUM_TURU" Association="Self.VETERINER_HAYVAN_DOGUM_TURU">
+            <End Role="VETERINER" EntitySet="VETERINER" />
+            <End Role="HAYVAN_DOGUM_TURU" EntitySet="HAYVAN_DOGUM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM" Association="Self.FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM">
+            <End Role="YEM_KARISIM" EntitySet="YEM_KARISIM" />
+            <End Role="HAYVAN_YEM_KARISIM_YEM_TURU" EntitySet="HAYVAN_YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="ILAC_TURU_SAGLIK_ILAC" Association="Self.ILAC_TURU_SAGLIK_ILAC">
+            <End Role="ILAC_TURU" EntitySet="ILAC_TURU" />
+            <End Role="SAGLIK_ILAC" EntitySet="SAGLIK_ILAC" />
+          </AssociationSet>
+          <AssociationSet Name="SAGLIK_SAGLIK_ASI_TURU" Association="Self.SAGLIK_SAGLIK_ASI_TURU">
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+            <End Role="SAGLIK_ASI_TURU" EntitySet="SAGLIK_ASI_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="SAGLIK_SAGLIK_ILAC" Association="Self.SAGLIK_SAGLIK_ILAC">
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+            <End Role="SAGLIK_ILAC" EntitySet="SAGLIK_ILAC" />
+          </AssociationSet>
+          <AssociationSet Name="VETERINER_SAGLIK" Association="Self.VETERINER_SAGLIK">
+            <End Role="VETERINER" EntitySet="VETERINER" />
+            <End Role="SAGLIK" EntitySet="SAGLIK" />
+          </AssociationSet>
+          <AssociationSet Name="YEM_KARISIM_YEM_KARISIM_YEM_TURU" Association="Self.YEM_KARISIM_YEM_KARISIM_YEM_TURU">
+            <End Role="YEM_KARISIM" EntitySet="YEM_KARISIM" />
+            <End Role="YEM_KARISIM_YEM_TURU" EntitySet="YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+          <AssociationSet Name="YEM_TURU_YEM_KARISIM_YEM_TURU" Association="Self.YEM_TURU_YEM_KARISIM_YEM_TURU">
+            <End Role="YEM_TURU" EntitySet="YEM_TURU" />
+            <End Role="YEM_KARISIM_YEM_TURU" EntitySet="YEM_KARISIM_YEM_TURU" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CYSModelStoreContainer" CdmEntityContainer="CYSEntities">
+          <EntitySetMapping Name="ASI_TURU">
+            <EntityTypeMapping TypeName="CYSModel.ASI_TURU">
+              <MappingFragment StoreEntitySet="ASI_TURU">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="ASI_ADI" ColumnName="ASI_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOGUM_TURU">
+            <EntityTypeMapping TypeName="CYSModel.DOGUM_TURU">
+              <MappingFragment StoreEntitySet="DOGUM_TURU">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="DOGUMTURU_ACIKLAMA" ColumnName="DOGUMTURU_ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HAYVAN">
+            <EntityTypeMapping TypeName="CYSModel.HAYVAN">
+              <MappingFragment StoreEntitySet="HAYVAN">
+                <ScalarProperty Name="KAYITNO" ColumnName="KAYITNO" />
+                <ScalarProperty Name="KAYIT_TARIHI" ColumnName="KAYIT_TARIHI" />
+                <ScalarProperty Name="DEVLET_NO" ColumnName="DEVLET_NO" />
+                <ScalarProperty Name="BOYUN_NO" ColumnName="BOYUN_NO" />
+                <ScalarProperty Name="KULAK_NO" ColumnName="KULAK_NO" />
+                <ScalarProperty Name="CINSIYETI" ColumnName="CINSIYETI" />
+                <ScalarProperty Name="ANNE_KAYITNO" ColumnName="ANNE_KAYITNO" />
+                <ScalarProperty Name="BABA_KAYITNO" ColumnName="BABA_KAYITNO" />
+                <ScalarProperty Name="HAYVANCINSI_SIRANO" ColumnName="HAYVANCINSI_SIRANO" />
+                <ScalarProperty Name="HAYVANKAYITTURU_SIRANO" ColumnName="HAYVANKAYITTURU_SIRANO" />
+                <ScalarProperty Name="DOGUM_TARIHI" ColumnName="DOGUM_TARIHI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HAYVAN_CINSI">
+            <EntityTypeMapping TypeName="CYSModel.HAYVAN_CINSI">
+              <MappingFragment StoreEntitySet="HAYVAN_CINSI">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="CINS_ADI" ColumnName="CINS_ADI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HAYVAN_DOGUM_TURU">
+            <EntityTypeMapping TypeName="CYSModel.HAYVAN_DOGUM_TURU">
+              <MappingFragment StoreEntitySet="HAYVAN_DOGUM_TURU">
+                <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+                <ScalarProperty Name="DOGUMTURU_SIRANO" ColumnName="DOGUMTURU_SIRANO" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="VETERINER_SIRANO" ColumnName="VETERINER_SIRANO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HAYVAN_KAYIT_TURU">
+            <EntityTypeMapping TypeName="CYSModel.HAYVAN_KAYIT_TURU">
+              <MappingFragment StoreEntitySet="HAYVAN_KAYIT_TURU">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="KAYIT_TURU_ADU" ColumnName="KAYIT_TURU_ADU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HAYVAN_YEM_KARISIM_YEM_TURU">
+            <EntityTypeMapping TypeName="CYSModel.HAYVAN_YEM_KARISIM_YEM_TURU">
+              <MappingFragment StoreEntitySet="HAYVAN_YEM_KARISIM_YEM_TURU">
+                <ScalarProperty Name="KAYITNO" ColumnName="KAYITNO" />
+                <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+                <ScalarProperty Name="KARISIM_SIRANO" ColumnName="KARISIM_SIRANO" />
+                <ScalarProperty Name="YEM_SAATI" ColumnName="YEM_SAATI" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ILAC_TURU">
+            <EntityTypeMapping TypeName="CYSModel.ILAC_TURU">
+              <MappingFragment StoreEntitySet="ILAC_TURU">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="ILAC_ADI" ColumnName="ILAC_ADI" />
+                <ScalarProperty Name="KULLANIM_TURU" ColumnName="KULLANIM_TURU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAGLIK">
+            <EntityTypeMapping TypeName="CYSModel.SAGLIK">
+              <MappingFragment StoreEntitySet="SAGLIK">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+                <ScalarProperty Name="VETERINER_SIRANO" ColumnName="VETERINER_SIRANO" />
+                <ScalarProperty Name="ISLEM_TARIHI" ColumnName="ISLEM_TARIHI" />
+                <ScalarProperty Name="ISLEM_ACIKLAMA" ColumnName="ISLEM_ACIKLAMA" />
+                <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAGLIK_ASI_TURU">
+            <EntityTypeMapping TypeName="CYSModel.SAGLIK_ASI_TURU">
+              <MappingFragment StoreEntitySet="SAGLIK_ASI_TURU">
+                <ScalarProperty Name="SAGLIK_SIRANO" ColumnName="SAGLIK_SIRANO" />
+                <ScalarProperty Name="ASITURU_SIRANO" ColumnName="ASITURU_SIRANO" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAGLIK_ILAC">
+            <EntityTypeMapping TypeName="CYSModel.SAGLIK_ILAC">
+              <MappingFragment StoreEntitySet="SAGLIK_ILAC">
+                <ScalarProperty Name="SAGLIK_IRANO" ColumnName="SAGLIK_IRANO" />
+                <ScalarProperty Name="ILACTURU_SIRANO" ColumnName="ILACTURU_SIRANO" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUT">
+            <EntityTypeMapping TypeName="CYSModel.SUT">
+              <MappingFragment StoreEntitySet="SUT">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+                <ScalarProperty Name="SAGIM_TARIHI" ColumnName="SAGIM_TARIHI" />
+                <ScalarProperty Name="ALINAN_SUT" ColumnName="ALINAN_SUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VETERINER">
+            <EntityTypeMapping TypeName="CYSModel.VETERINER">
+              <MappingFragment StoreEntitySet="VETERINER">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="VETERINER_ADI" ColumnName="VETERINER_ADI" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
+                <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+                <ScalarProperty Name="EPOSTA" ColumnName="EPOSTA" />
+                <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YEM_KARISIM">
+            <EntityTypeMapping TypeName="CYSModel.YEM_KARISIM">
+              <MappingFragment StoreEntitySet="YEM_KARISIM">
+                <ScalarProperty Name="KARISIM_SIRANO" ColumnName="KARISIM_SIRANO" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YEM_KARISIM_YEM_TURU">
+            <EntityTypeMapping TypeName="CYSModel.YEM_KARISIM_YEM_TURU">
+              <MappingFragment StoreEntitySet="YEM_KARISIM_YEM_TURU">
+                <ScalarProperty Name="KARISIM_SIRANO" ColumnName="KARISIM_SIRANO" />
+                <ScalarProperty Name="YEMTURU_SIRANO" ColumnName="YEMTURU_SIRANO" />
+                <ScalarProperty Name="ORAN" ColumnName="ORAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YEM_TURU">
+            <EntityTypeMapping TypeName="CYSModel.YEM_TURU">
+              <MappingFragment StoreEntitySet="YEM_TURU">
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="YEM_TURU_ACIKLAMA" ColumnName="YEM_TURU_ACIKLAMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

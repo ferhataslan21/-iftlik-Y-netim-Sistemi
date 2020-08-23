@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CYSModelStoreContainer" CdmEntityContainer="CYSEntities">
+    <EntitySetMapping Name="ASI_TURU">
+      <EntityTypeMapping TypeName="CYSModel.ASI_TURU">
+        <MappingFragment StoreEntitySet="ASI_TURU">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="ASI_ADI" ColumnName="ASI_ADI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOGUM_TURU">
+      <EntityTypeMapping TypeName="CYSModel.DOGUM_TURU">
+        <MappingFragment StoreEntitySet="DOGUM_TURU">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="DOGUMTURU_ACIKLAMA" ColumnName="DOGUMTURU_ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HAYVAN">
+      <EntityTypeMapping TypeName="CYSModel.HAYVAN">
+        <MappingFragment StoreEntitySet="HAYVAN">
+          <ScalarProperty Name="KAYITNO" ColumnName="KAYITNO" />
+          <ScalarProperty Name="KAYIT_TARIHI" ColumnName="KAYIT_TARIHI" />
+          <ScalarProperty Name="DEVLET_NO" ColumnName="DEVLET_NO" />
+          <ScalarProperty Name="BOYUN_NO" ColumnName="BOYUN_NO" />
+          <ScalarProperty Name="KULAK_NO" ColumnName="KULAK_NO" />
+          <ScalarProperty Name="CINSIYETI" ColumnName="CINSIYETI" />
+          <ScalarProperty Name="ANNE_KAYITNO" ColumnName="ANNE_KAYITNO" />
+          <ScalarProperty Name="BABA_KAYITNO" ColumnName="BABA_KAYITNO" />
+          <ScalarProperty Name="HAYVANCINSI_SIRANO" ColumnName="HAYVANCINSI_SIRANO" />
+          <ScalarProperty Name="HAYVANKAYITTURU_SIRANO" ColumnName="HAYVANKAYITTURU_SIRANO" />
+          <ScalarProperty Name="DOGUM_TARIHI" ColumnName="DOGUM_TARIHI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HAYVAN_CINSI">
+      <EntityTypeMapping TypeName="CYSModel.HAYVAN_CINSI">
+        <MappingFragment StoreEntitySet="HAYVAN_CINSI">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="CINS_ADI" ColumnName="CINS_ADI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HAYVAN_DOGUM_TURU">
+      <EntityTypeMapping TypeName="CYSModel.HAYVAN_DOGUM_TURU">
+        <MappingFragment StoreEntitySet="HAYVAN_DOGUM_TURU">
+          <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+          <ScalarProperty Name="DOGUMTURU_SIRANO" ColumnName="DOGUMTURU_SIRANO" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+          <ScalarProperty Name="VETERINER_SIRANO" ColumnName="VETERINER_SIRANO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HAYVAN_KAYIT_TURU">
+      <EntityTypeMapping TypeName="CYSModel.HAYVAN_KAYIT_TURU">
+        <MappingFragment StoreEntitySet="HAYVAN_KAYIT_TURU">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="KAYIT_TURU_ADU" ColumnName="KAYIT_TURU_ADU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HAYVAN_YEM_KARISIM_YEM_TURU">
+      <EntityTypeMapping TypeName="CYSModel.HAYVAN_YEM_KARISIM_YEM_TURU">
+        <MappingFragment StoreEntitySet="HAYVAN_YEM_KARISIM_YEM_TURU">
+          <ScalarProperty Name="KAYITNO" ColumnName="KAYITNO" />
+          <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+          <ScalarProperty Name="KARISIM_SIRANO" ColumnName="KARISIM_SIRANO" />
+          <ScalarProperty Name="YEM_SAATI" ColumnName="YEM_SAATI" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ILAC_TURU">
+      <EntityTypeMapping TypeName="CYSModel.ILAC_TURU">
+        <MappingFragment StoreEntitySet="ILAC_TURU">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="ILAC_ADI" ColumnName="ILAC_ADI" />
+          <ScalarProperty Name="KULLANIM_TURU" ColumnName="KULLANIM_TURU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAGLIK">
+      <EntityTypeMapping TypeName="CYSModel.SAGLIK">
+        <MappingFragment StoreEntitySet="SAGLIK">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+          <ScalarProperty Name="VETERINER_SIRANO" ColumnName="VETERINER_SIRANO" />
+          <ScalarProperty Name="ISLEM_TARIHI" ColumnName="ISLEM_TARIHI" />
+          <ScalarProperty Name="ISLEM_ACIKLAMA" ColumnName="ISLEM_ACIKLAMA" />
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAGLIK_ASI_TURU">
+      <EntityTypeMapping TypeName="CYSModel.SAGLIK_ASI_TURU">
+        <MappingFragment StoreEntitySet="SAGLIK_ASI_TURU">
+          <ScalarProperty Name="SAGLIK_SIRANO" ColumnName="SAGLIK_SIRANO" />
+          <ScalarProperty Name="ASITURU_SIRANO" ColumnName="ASITURU_SIRANO" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAGLIK_ILAC">
+      <EntityTypeMapping TypeName="CYSModel.SAGLIK_ILAC">
+        <MappingFragment StoreEntitySet="SAGLIK_ILAC">
+          <ScalarProperty Name="SAGLIK_IRANO" ColumnName="SAGLIK_IRANO" />
+          <ScalarProperty Name="ILACTURU_SIRANO" ColumnName="ILACTURU_SIRANO" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUT">
+      <EntityTypeMapping TypeName="CYSModel.SUT">
+        <MappingFragment StoreEntitySet="SUT">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="HAYVAN_KAYITNO" ColumnName="HAYVAN_KAYITNO" />
+          <ScalarProperty Name="SAGIM_TARIHI" ColumnName="SAGIM_TARIHI" />
+          <ScalarProperty Name="ALINAN_SUT" ColumnName="ALINAN_SUT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VETERINER">
+      <EntityTypeMapping TypeName="CYSModel.VETERINER">
+        <MappingFragment StoreEntitySet="VETERINER">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="VETERINER_ADI" ColumnName="VETERINER_ADI" />
+          <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+          <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
+          <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+          <ScalarProperty Name="EPOSTA" ColumnName="EPOSTA" />
+          <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YEM_KARISIM">
+      <EntityTypeMapping TypeName="CYSModel.YEM_KARISIM">
+        <MappingFragment StoreEntitySet="YEM_KARISIM">
+          <ScalarProperty Name="KARISIM_SIRANO" ColumnName="KARISIM_SIRANO" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YEM_KARISIM_YEM_TURU">
+      <EntityTypeMapping TypeName="CYSModel.YEM_KARISIM_YEM_TURU">
+        <MappingFragment StoreEntitySet="YEM_KARISIM_YEM_TURU">
+          <ScalarProperty Name="KARISIM_SIRANO" ColumnName="KARISIM_SIRANO" />
+          <ScalarProperty Name="YEMTURU_SIRANO" ColumnName="YEMTURU_SIRANO" />
+          <ScalarProperty Name="ORAN" ColumnName="ORAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YEM_TURU">
+      <EntityTypeMapping TypeName="CYSModel.YEM_TURU">
+        <MappingFragment StoreEntitySet="YEM_TURU">
+          <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+          <ScalarProperty Name="YEM_TURU_ACIKLAMA" ColumnName="YEM_TURU_ACIKLAMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c49266d2c04a4446b2f67fad81521954" Name="Diagram1">
+        <EntityTypeShape EntityType="CYSModel.ASI_TURU" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.DOGUM_TURU" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.HAYVAN" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.HAYVAN_CINSI" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.HAYVAN_DOGUM_TURU" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.HAYVAN_KAYIT_TURU" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.HAYVAN_YEM_KARISIM_YEM_TURU" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.ILAC_TURU" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.SAGLIK" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.SAGLIK_ASI_TURU" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.SAGLIK_ILAC" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.SUT" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.VETERINER" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.YEM_KARISIM" Width="1.5" PointX="6" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.YEM_KARISIM_YEM_TURU" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CYSModel.YEM_TURU" Width="1.5" PointX="6" PointY="21.375" IsExpanded="true" />
+        <AssociationConnector Association="CYSModel.ASI_TURU_SAGLIK_ASI_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.DOGUM_TURU_HAYVAN_DOGUM_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.HAYVAN_CINSI_HAYVAN" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.HAYVAN_HAYVAN_DOGUM_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.HAYVAN_HAYVAN_YEM_KARISIM_YEM_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.HAYVAN_KAYIT_TURU_HAYVAN" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.HAYVAN_SAGLIK" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.HAYVAN_SUT" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.VETERINER_HAYVAN_DOGUM_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.FK_HAYVAN_YEM_KARISIM_YEM_TURU_YEM_KARISIM" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.ILAC_TURU_SAGLIK_ILAC" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.SAGLIK_SAGLIK_ASI_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.SAGLIK_SAGLIK_ILAC" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.VETERINER_SAGLIK" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.YEM_KARISIM_YEM_KARISIM_YEM_TURU" ManuallyRouted="false" />
+        <AssociationConnector Association="CYSModel.YEM_TURU_YEM_KARISIM_YEM_TURU" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

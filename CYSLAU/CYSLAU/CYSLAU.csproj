@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4D8267C-C3E6-41D8-BB31-7CE2461E4956}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CYSLAU</RootNamespace>
+    <AssemblyName>CYSLAU</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v20.1" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1" />
+    <Reference Include="DevExpress.Data.v20.1" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\ASI_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CiftlikModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiftlikModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CiftlikModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CiftlikModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiftlikModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\DOGUM_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HAYVAN.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HAYVAN_CINSI.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HAYVAN_DOGUM_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HAYVAN_KAYIT_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HAYVAN_YEM_KARISIM_YEM_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ILAC_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SAGLIK.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SAGLIK_ASI_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SAGLIK_ILAC.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SUT.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\VETERINER.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\YEM_KARISIM.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\YEM_KARISIM_YEM_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\YEM_TURU.cs">
+      <DependentUpon>CiftlikModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmIlacTuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmIlacTuru.Designer.cs">
+      <DependentUpon>frmIlacTuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmYemKarisimOran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmYemKarisimOran.Designer.cs">
+      <DependentUpon>frmYemKarisimOran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmYemKarisim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmYemKarisim.Designer.cs">
+      <DependentUpon>frmYemKarisim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmYemTuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmYemTuru.Designer.cs">
+      <DependentUpon>frmYemTuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmDogumTuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmDogumTuru.Designer.cs">
+      <DependentUpon>frmDogumTuru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmHayvanCins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmHayvanCins.Designer.cs">
+      <DependentUpon>frmHayvanCins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmHayvanKayitTur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmHayvanKayitTur.Designer.cs">
+      <DependentUpon>frmHayvanKayitTur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\frmAsiTur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\frmAsiTur.Designer.cs">
+      <DependentUpon>frmAsiTur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmHayvan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmHayvan.Designer.cs">
+      <DependentUpon>frmHayvan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmHayvanListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmHayvanListesi.Designer.cs">
+      <DependentUpon>frmHayvanListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmHayvanYem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmHayvanYem.Designer.cs">
+      <DependentUpon>frmHayvanYem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmMuayeneListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmMuayeneListesi.Designer.cs">
+      <DependentUpon>frmMuayeneListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmSutSagim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Hayvan\frmSutSagim.Designer.cs">
+      <DependentUpon>frmSutSagim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmMuayene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmMuayene.Designer.cs">
+      <DependentUpon>frmMuayene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmMuayeneAsi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmMuayeneAsi.Designer.cs">
+      <DependentUpon>frmMuayeneAsi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmMuayeneIlac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmMuayeneIlac.Designer.cs">
+      <DependentUpon>frmMuayeneIlac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmVeteriner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmVeteriner.Designer.cs">
+      <DependentUpon>frmVeteriner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmVeterinerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Veteriner\frmVeterinerList.Designer.cs">
+      <DependentUpon>frmVeterinerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Genel\CYS.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raporlar\rptHayvanListesi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\rptHayvanListesi.Designer.cs">
+      <DependentUpon>rptHayvanListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\rptMuayeneListesi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Raporlar\rptMuayeneListesi.Designer.cs">
+      <DependentUpon>rptMuayeneListesi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmIlacTuru.resx">
+      <DependentUpon>frmIlacTuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmYemKarisimOran.resx">
+      <DependentUpon>frmYemKarisimOran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmYemKarisim.resx">
+      <DependentUpon>frmYemKarisim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmYemTuru.resx">
+      <DependentUpon>frmYemTuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmDogumTuru.resx">
+      <DependentUpon>frmDogumTuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmHayvanCins.resx">
+      <DependentUpon>frmHayvanCins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmHayvanKayitTur.resx">
+      <DependentUpon>frmHayvanKayitTur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\frmAsiTur.resx">
+      <DependentUpon>frmAsiTur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Hayvan\frmHayvan.resx">
+      <DependentUpon>frmHayvan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Hayvan\frmHayvanListesi.resx">
+      <DependentUpon>frmHayvanListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Hayvan\frmHayvanYem.resx">
+      <DependentUpon>frmHayvanYem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Hayvan\frmMuayeneListesi.resx">
+      <DependentUpon>frmMuayeneListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Hayvan\frmSutSagim.resx">
+      <DependentUpon>frmSutSagim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Veteriner\frmMuayene.resx">
+      <DependentUpon>frmMuayene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Veteriner\frmMuayeneAsi.resx">
+      <DependentUpon>frmMuayeneAsi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Veteriner\frmMuayeneIlac.resx">
+      <DependentUpon>frmMuayeneIlac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Veteriner\frmVeteriner.resx">
+      <DependentUpon>frmVeteriner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Veteriner\frmVeterinerList.resx">
+      <DependentUpon>frmVeterinerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Raporlar\rptHayvanListesi.resx">
+      <DependentUpon>rptHayvanListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\rptMuayeneListesi.resx">
+      <DependentUpon>rptMuayeneListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <EntityDeploy Include="DB\CiftlikModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CiftlikModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\CiftlikModel.edmx.diagram">
+      <DependentUpon>CiftlikModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CYSLAU.DB.ASI_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.DOGUM_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.HAYVAN.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.HAYVAN_CINSI.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.HAYVAN_KAYIT_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.HAYVAN_YEM_KARISIM_YEM_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.ILAC_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.SAGLIK.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.SAGLIK_ASI_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.SAGLIK_ILAC.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.SUT.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.VETERINER.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.YEM_KARISIM.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.YEM_KARISIM_YEM_TURU.datasource" />
+    <None Include="Properties\DataSources\CYSLAU.DB.YEM_TURU.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CYS.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CYS_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CYS.mdf</DependentUpon>
+    </Content>
+    <Content Include="DB\CiftlikModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CiftlikModel.edmx</DependentUpon>
+      <LastGenOutput>CiftlikModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\CiftlikModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CiftlikModel.edmx</DependentUpon>
+      <LastGenOutput>CiftlikModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\CYS.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB\CYS_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CYS.mdf</DependentUpon>
+    </Content>
+    <Content Include="tr\DevExpress.Charts.Designer.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Dashboard.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Dashboard.v20.1.Web.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Dashboard.v20.1.Win.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Data.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.DataAccess.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.DataAccess.v20.1.UI.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Dialogs.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Map.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Mvvm.v20.1.DataModel.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Office.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Pdf.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Persistent.Base.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.PivotGrid.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Printing.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.ReportServer.v20.1.Localization.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.RichEdit.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Snap.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Snap.v20.1.Extensions.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Snap.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Sparkline.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Spreadsheet.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Utils.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.Utils.v20.1.UI.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraBars.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraCharts.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraCharts.v20.1.Wizard.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraEditors.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraGantt.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraGauges.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraGauges.v20.1.Presets.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraGrid.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraLayout.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraNavBar.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraPdfViewer.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraPivotGrid.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraPrinting.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraReports.v20.1.Extensions.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraReports.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraReports.v20.1.Web.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraRichEdit.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.Core.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.Extensions.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.Reporting.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraScheduler.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraSpellChecker.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraSpreadsheet.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraTreeList.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraVerticalGrid.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tr\DevExpress.XtraWizard.v20.1.resources.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
